@@ -1,0 +1,20 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    username: postgres
+    password: postgres
+    hikari:
+      maximum-pool-size: 5
+    url: 'jdbc:postgresql://localhost:5432/gringotts'
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc.lob.non_contextual_creation: true
+        enable_lazy_load_no_trans: true
+        current_session_context_class: thread
+    hibernate:
+      ddl-auto: create-drop
+#        generate_statistics: true
+
